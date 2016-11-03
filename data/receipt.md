@@ -1,9 +1,10 @@
-Jim's Joint
-2016.10.31
+Spaghetti Pasta 
+10/22/2016
 
 Your order:
-- 1 Big Burger
-- 2 Coffee
-- 1 Cheese
 
-Total: $18.84
+- 1 Milksteak
+- 1 Milk
+- 1 Steak
+
+Total: $20.35
