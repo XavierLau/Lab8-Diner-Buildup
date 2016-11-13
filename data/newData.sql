@@ -1,0 +1,170 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Nov 12, 2016 at 05:46 PM
+-- Server version: 5.6.32
+-- PHP Version: 5.6.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `comp4711lab5/6/7`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` varchar(1) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `description`, `image`) VALUES
+('d', 'Drinks', 'Purees made from the finest of Venusian insects, government-inspected.', 'catd.png'),
+('m', 'Mains', 'Made from only the finest ingredients found deep in the Martian jungle, and harvested or slaughtered by academy-trained druids, we bring you 45 day aged premium "meat".', 'catm.png'),
+('s', 'Sides', 'Perfect accompaniments to our mains, these side dish pairings have been exclsisvely formulated by Ben & Jerry.', 'cats.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ci_sessions`
+--
+
+CREATE TABLE `ci_sessions` (
+  `id` varchar(128) NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `data` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ci_sessions`
+--
+
+INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('76a716bd586df25f31d3d09d994de223ca5489ca', '127.0.0.1', 1478207101, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383230363833333b),
+('a1defe1b9f5cd63550a3e5a24d66a6587a274e33', '127.0.0.1', 1478207371, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383230373134363b),
+('06a745db14a08191901ebd5086eb9005d8732840', '127.0.0.1', 1478208583, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383230383430383b75736572726f6c657c733a353a2261646d696e223b),
+('45d416d503c47ec8b047374a1c7c4b032384d117', '127.0.0.1', 1478208757, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383230383734383b75736572726f6c657c733a343a2275736572223b),
+('67d9f62eed8a93d4adf896028a7325585685fe93', '127.0.0.1', 1478209782, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383230393532353b75736572726f6c657c733a353a2261646d696e223b),
+('82078a1b40a0abee604ae5bc579583c5268cf6f0', '127.0.0.1', 1478210139, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383231303133303b75736572726f6c657c733a353a2261646d696e223b),
+('eaefb6f41f3aa784735e78487840c35e4a46fa65', '127.0.0.1', 1478813705, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383831333638323b75736572726f6c657c733a353a2261646d696e223b),
+('842742af6d7bc8be9518ec7d75301045887244d1', '127.0.0.1', 1478814767, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383831343638313b75736572726f6c657c733a353a2261646d696e223b),
+('bc58fb583366c2c702e0a344834e82e36c6fc66d', '127.0.0.1', 1478815025, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383831353031373b75736572726f6c657c733a353a2261646d696e223b),
+('6d21ee2557f5954eb382ed26cccea6a489d79251', '127.0.0.1', 1478815468, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383831353435313b75736572726f6c657c733a353a2261646d696e223b6b65797c733a313a2236223b7265636f72647c4f3a383a22737464436c617373223a363a7b733a323a226964223b733a313a2236223b733a343a226e616d65223b733a353a22446f6e7574223b733a31313a226465736372697074696f6e223b733a39323a2244697367757374696e676c792073776565742c20746f7070656420776974682061727465727920636c6f6767696e672063686f636f6c61746520616e64207468656e20737072696e6b6c656420776974682050697869652064757374223b733a353a227072696365223b733a343a22312e3235223b733a373a2270696374757265223b733a353a22362e706e67223b733a383a2263617465676f7279223b733a313a2273223b7d),
+('5ca91e8392f13bb1bb7337986e9c169af511a442', '127.0.0.1', 1478815989, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383831353936303b75736572726f6c657c733a343a2275736572223b6b65797c733a313a2236223b7265636f72647c4f3a383a22737464436c617373223a363a7b733a323a226964223b733a313a2236223b733a343a226e616d65223b733a353a22446f6e7574223b733a31313a226465736372697074696f6e223b733a39323a2244697367757374696e676c792073776565742c20746f7070656420776974682061727465727920636c6f6767696e672063686f636f6c61746520616e64207468656e20737072696e6b6c656420776974682050697869652064757374223b733a353a227072696365223b733a343a22312e3235223b733a373a2270696374757265223b733a353a22362e706e67223b733a383a2263617465676f7279223b733a313a2273223b7d),
+('83a4bb0fa05e05270319cb701cca36c6eac1c1ac', '127.0.0.1', 1478816317, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383831363330373b75736572726f6c657c733a353a2261646d696e223b6b65797c733a313a2236223b7265636f72647c4f3a383a22737464436c617373223a363a7b733a323a226964223b733a313a2236223b733a343a226e616d65223b733a353a22446f6e7574223b733a31313a226465736372697074696f6e223b733a39323a2244697367757374696e676c792073776565742c20746f7070656420776974682061727465727920636c6f6767696e672063686f636f6c61746520616e64207468656e20737072696e6b6c656420776974682050697869652064757374223b733a353a227072696365223b733a343a22312e3235223b733a373a2270696374757265223b733a353a22362e706e67223b733a383a2263617465676f7279223b733a313a2273223b7d),
+('ead0b3f417d3e3a6b6a2f8aec36d83621223a52f', '127.0.0.1', 1478816817, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437383831363831313b75736572726f6c657c733a353a2261646d696e223b6b65797c733a313a2236223b7265636f72647c4f3a383a22737464436c617373223a363a7b733a323a226964223b733a313a2236223b733a343a226e616d65223b733a353a22446f6e7574223b733a31313a226465736372697074696f6e223b733a39323a2244697367757374696e676c792073776565742c20746f7070656420776974682061727465727920636c6f6767696e672063686f636f6c61746520616e64207468656e20737072696e6b6c656420776974682050697869652064757374223b733a353a227072696365223b733a343a22312e3235223b733a373a2270696374757265223b733a353a22362e706e67223b733a383a2263617465676f7279223b733a313a2273223b7d),
+('30393f2d91c9576217d8641adb0614e05e35625f', '127.0.0.1', 1479001127, 0x5f5f63695f6c6173745f726567656e65726174657c693a313437393030303935303b75736572726f6c657c733a353a2261646d696e223b6b65797c4e3b7265636f72647c4f3a383a22737464436c617373223a363a7b733a323a226964223b733a313a2231223b733a343a226e616d65223b733a343a22436f6c61223b733a31313a226465736372697074696f6e223b733a383a2276616c75650d0a09223b733a353a227072696365223b733a343a22302e3530223b733a373a2270696374757265223b733a343a226e6f6e65223b733a383a2263617465676f7279223b733a313a2264223b7d);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu`
+--
+
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `description` varchar(256) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `picture` varchar(100) NOT NULL,
+  `category` varchar(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`id`, `name`, `description`, `price`, `picture`, `category`) VALUES
+(1, 'Cheese', 'Leave this raw milk, beefy and sweet cheese out for an hour before serving and pair with pear jam.', '2.95', '1.png', 's'),
+(2, 'Turkey', 'Roasted, succulent, stuffed, lovingly sliced turkey breast', '5.95', '2.png', 'm'),
+(6, 'Donut', 'Disgustingly sweet, topped with artery clogging chocolate and then sprinkled with Pixie dust', '1.25', '6.png', 's'),
+(10, 'Bubbly', '1964 Moet Charmon, made from grapes crushed by elves with clean feet, perfectly chilled.', '14.50', '10.png', 'd'),
+(11, 'Ice Cream', 'Combination of decadent chocolate topped with luscious strawberry, churned by gifted virgins using only cream from the Tajima strain of wagyu cattle', '3.75', '11.png', 's'),
+(8, 'Hot Dog', 'Pork trimmings mixed with powdered preservatives, flavourings, red colouring and drenched in water before being squeezed into plastic tubes. Topped with onions, bacon, chili or cheese - no extra charge.', '6.90', '8.png', 'm'),
+(25, 'Burger', 'Half-pound of beef, topped with bacon and served with your choice of a slice of American cheese, red onion, sliced tomato, and Heart Attack Grill\'s own unique special sauce.', '9.99', 'burger.png', 'm'),
+(21, 'Coffee', 'A delicious cup of the nectar of life, saviour of students, morning kick-starter; made with freshly grounds that you don\'t want to know where they came from!', '2.95', 'coffee.png', 'd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderitems`
+--
+
+CREATE TABLE `orderitems` (
+  `order` int(11) NOT NULL,
+  `item` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `special` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `num` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `status` varchar(1) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `customer` varchar(64) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ci_sessions`
+--
+ALTER TABLE `ci_sessions`
+  ADD KEY `ci_sessions_timestamp` (`timestamp`);
+
+--
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orderitems`
+--
+ALTER TABLE `orderitems`
+  ADD PRIMARY KEY (`order`,`item`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`num`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
