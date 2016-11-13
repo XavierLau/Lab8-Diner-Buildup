@@ -1,3 +1,4 @@
+*/config/database.php
 */config/development
 */logs/log-*.php
 !*/logs/index.html
@@ -6,4 +7,3 @@
 !*/cache/.htaccess
 /nbproject/private/
 /nbproject/
-*/config/database.php
